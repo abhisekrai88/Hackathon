@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import TodoEntry from "./TodoEntry";
 import "./todoapp.css";
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 
 class TodoList extends Component {
