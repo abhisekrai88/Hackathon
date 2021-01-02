@@ -5,7 +5,7 @@ class TodoEntry extends Component{
         return <li key={item.key}>{item.text}</li>
     }
     render (){
-        var todoItems = this.props.items;
+        var todoItems = this.props.entry;
         var itemsList = todoItems.map(this.newTask);
 
         return (
