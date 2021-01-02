@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TodoEntry from "./TodoEntry";
+import "./todoapp.css";
 
 class TodoList extends Component {
     constructor(props){
@@ -9,6 +10,7 @@ class TodoList extends Component {
             items: []
         };
         this.addItem = this.addItem.bind(this);
+        this.deleteTask = this.deleteTask.bind(this);
     }
     addItem(e) {
         if (this._inputElement.value !== "") {
@@ -26,6 +28,15 @@ class TodoList extends Component {
         console.log(this.state.items);
         e.preventDefault();
     }
+    deleteTask(key) {
+        var updatedList = this.state.items.filter(function (item) {
+          return (item.key !== key);
+        });
+       
+        this.setState({
+          items: updatedList
+        });
+      }
     render() {
         return (
             <div className="todoListMain">
@@ -34,10 +45,11 @@ class TodoList extends Component {
                         <input ref={(a) => this._inputElement =a}
                             placeholder="enter task">
                         </input>
-                        <button type="submit">add</button>
+                        <button type="submit">ADD</button>
                     </form>
+                    
                 </div>
-                <TodoEntry entry={this.state.items}/>
+                <TodoEntry entry={this.state.items} delete={this.deleteTask}/>
             </div>
         );
     }

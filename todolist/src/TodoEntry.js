@@ -1,13 +1,20 @@
-import react, {Component} from "react";
+import React, {Component} from "react";
 
 class TodoEntry extends Component{
-    cons
+    constructor(props) {
+        super(props);
+     
+        this.newTask = this.newTask.bind(this);
+      }
+     
+      delete(key) {
+        this.props.delete(key);
+      }
     newTask(item) {
         //using key attr (set by date.now() in todoentry.js) to make it easier to keep tracks of each of the elements.
-        return <li key={item.key}>{item.text}</li>
-        //removing todo items
-        return <li onClick={() => this.delete(item.key)} key = {item.key}>
-            {item.text}</li>
+        
+        return <li onClick={() => this.delete(item.key)}
+        key={item.key}>{item.text}</li>
     }
       
     render (){
