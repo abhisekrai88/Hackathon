@@ -24,7 +24,7 @@ class TodoEntry extends Component{
 
         //to display elements on screen
         return (
-            <ul classname="list">
+            <ul className="list">
                 {itemsList}
             </ul>
         );
