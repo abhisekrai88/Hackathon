@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TodoEntry from "./TodoEntry";
 import "./todoapp.css";
 
+
 class TodoList extends Component {
     constructor(props){
         super(props);
@@ -40,6 +41,7 @@ class TodoList extends Component {
     render() {
         return (
             <div className="todoListMain">
+                <div className="title">My To-Do List</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
                         <input ref={(a) => this._inputElement =a}
