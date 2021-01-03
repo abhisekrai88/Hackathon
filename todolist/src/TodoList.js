@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TodoEntry from "./TodoEntry";
 import "./todoapp.css";
-import Header from "./header"
+
 
 
 
@@ -45,11 +45,12 @@ class TodoList extends Component {
         return (
             
             <div className="todoListMain">
-                <div className="title">My To-Do List</div>
+                <div className="title">My To-Do List{this.length}</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
                         <input ref={(a) => this._inputElement =a}
                             placeholder="Add a Task">
+                                
                         </input>
                         <button type="submit">ADD</button>
                         
@@ -57,7 +58,7 @@ class TodoList extends Component {
                 
                     
                 </div>
-                <Header numTodos={this.state.items.length}/>
+                
                 <TodoEntry entry={this.state.items} delete={this.deleteTask} />
             </div>
         );
