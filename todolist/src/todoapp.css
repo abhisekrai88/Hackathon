@@ -44,3 +44,8 @@
   ul {
       padding-inline-start: 0px;
   }
+
+  .date .priority .inputTask{
+    padding: 5px;
+    margin: 10px;
+  }

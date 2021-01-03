@@ -26,12 +26,11 @@ class TodoList extends Component {
     }
     
     addItem(e) {
-        if (this._inputElement.value !== "") {
+        if (this._inputElement.value !=="" && this._inputElement1.value !=="" && this._inputElement2.value !=="") {
             var newItem = {
                 text: this._inputElement.value,
                 text1: this._inputElement1.value,
                 text2: this._inputElement2.value,
-                text3: this._inputElement3.value,
                 key: Date.now()
                
             };
@@ -40,12 +39,17 @@ class TodoList extends Component {
                     items: prevState.items.concat (newItem)
                 };
             });
+            
             this._inputElement.value = "";
+            this._inputElement1.value ="";
+            this._inputElement2.value = "";
+            console.log(this.state.items);
         }
-        console.log(this.state.items);
+        
         e.preventDefault();
     }
     deleteTask(key) {
+        console.log("Deletetask: " + key)
         var updatedList = this.state.items.filter(function (item) {
           return (item.key !== key);
         });
@@ -62,12 +66,12 @@ class TodoList extends Component {
                 <div className="title">My To-Do List</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
-                        <input ref={(a) => this._inputElement=a}
+                        <input className="inputTask" ref={(a) => this._inputElement=a}
                             placeholder="Add a Task">
                         </input>
                         
-                        <input type="date" ref={(b) => this._inputElement1=b}></input>
-                        <select  ref={(c) => this._inputElement2=c}>
+                        <input className="date" type="date" ref={(b) => this._inputElement1=b}></input>
+                        <select className="priority"  ref={(c) => this._inputElement2=c}>
                             <option value="Urgent">Urgent</option>
                             <option value="Recurring">Recurring</option>
                             <option value="Normal">Normal</option>

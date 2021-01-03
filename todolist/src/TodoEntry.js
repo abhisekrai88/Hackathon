@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import FlipMove from "react-flip-move";
+
 
 
 class TodoEntry extends Component{
@@ -30,12 +30,9 @@ class TodoEntry extends Component{
         //to display elements on screen
         return (
             <ul className="list">
-                 <FlipMove duration={500} easing="ease-out">
+                
                 {itemsList}
                 
-               
-
-                </FlipMove>
             </ul>
         );
     }
