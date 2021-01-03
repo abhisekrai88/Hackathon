@@ -69,6 +69,7 @@ class TodoList extends Component {
             
             <div className="todoListMain">
                 <div className="title" >My To-Do List</div>
+                <div className="taskNum">You have {this.state.items.length} outstandind task(s)!</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
                         <input className="inputTask" ref={(a) => this._inputElement=a} 
