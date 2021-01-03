@@ -5,6 +5,7 @@ import "./todoapp.css";
 
 
 
+
 class TodoList extends Component {
     
     constructor(props){
@@ -52,7 +53,6 @@ class TodoList extends Component {
     
     
     deleteTask(key) {
-        console.log("Deletetask: " + key)
         var updatedList = this.state.items.filter(function (item) {
           return (item.key !== key);
         });
