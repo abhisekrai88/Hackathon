@@ -67,4 +67,22 @@ body{
       padding-inline-start: 0px;
   }
 
-  
+  #date {
+    width: 100px;
+  }
+
+  #priority{
+    width: 100px;
+  }
+  lh{
+    color: #333;
+    font-size: 16px;
+    list-style: none;
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+  }
+
+  form{
+    display: flexbox;
+  }

@@ -18,14 +18,14 @@ class TodoEntry extends Component{
     newTask(item) {
         //using key attr (set by date.now() in todoentry.js) to make it easier to keep tracks of each of the elements.
         
-        return (<div className="test"><li onClick={() => this.delete(item.key)}
-        key={item.key}>Task: {item.text}</li>
-        <li onClick={() => this.delete(item.key)}
+        return (<div className="test"><lh>Task</lh><li onClick={() => this.delete(item.key)}
+        key={item.key}>{item.text}</li>
+        <lh>Date Due</lh><li id="date" onClick={() => this.delete(item.key)}
         key={item.key}>
-            Date Due:{item.text1}</li>
-       <li onClick={() => this.delete(item.key)}
+            {item.text1}</li>
+       <lh>Priority</lh><li id="priority" onClick={() => this.delete(item.key)}
         key={item.key}>
-            Priority:{item.text2}</li>
+            {item.text2}</li>
         </div>
         )
     }
