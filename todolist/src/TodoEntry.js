@@ -18,14 +18,18 @@ class TodoEntry extends Component{
     newTask(item) {
         //using key attr (set by date.now() in todoentry.js) to make it easier to keep tracks of each of the elements.
         
-        return (<div className="test"><lh>Task</lh><li onClick={() => this.delete(item.key)}
-        key={item.key}>{item.text}</li>
-        <lh>Date Due</lh><li id="date" onClick={() => this.delete(item.key)}
-        key={item.key}>
-            {item.text1}</li>
-       <lh>Priority</lh><li id="priority" onClick={() => this.delete(item.key)}
-        key={item.key}>
+        return (<div className="test"><li onClick={() => this.delete(item.key)}
+        key={item.key}>{item.text}<ul id="nestedUL">
+            <li id="date" onClick={() => this.delete(item.key)}
+        key={item.key}>Due: 
+             {item.text1}</li>
+            
+            <li id="priority" onClick={() => this.delete(item.key)}
+        key={item.key}>Priority: 
             {item.text2}</li>
+            
+            </ul></li>
+        
         </div>
         )
     }
@@ -39,7 +43,7 @@ class TodoEntry extends Component{
         //to display elements on screen
         return (
             <ul className="list" >
-                <FlipMove duration={500}easing="ease-out"> 
+                <FlipMove duration={250}easing="ease-out"> 
                 {itemsList}
                 </FlipMove>
             </ul>

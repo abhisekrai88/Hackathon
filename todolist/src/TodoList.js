@@ -78,6 +78,7 @@ class TodoList extends Component {
                         
                         <input className="date" type="date" ref={(b) => this._inputElement1=b}></input>
                         <select className="priority"  ref={(c) => this._inputElement2=c}>
+                        <option value="">Please Choose</option>
                             <option value="Urgent">Urgent</option>
                             <option value="Recurring">Recurring</option>
                             <option value="Normal">Normal</option>

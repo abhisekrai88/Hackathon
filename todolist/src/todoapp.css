@@ -42,23 +42,22 @@ body{
   }
   .todoListMain  .list li {
     color: #333;
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(219, 130, 14, 0.404);
     padding: 15px;padding: 10px;
     font-size: 16px;
     margin: 10px;
-
     border-radius: 5px;
-    width: 320px;
+    width: 740px;
     list-style: none;
     display: inline-block;
-    
+    word-wrap:break-word;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
     
   }
    
   .todoListMain .list li:hover {
-    background-color: whitesmoke;
+    background-color: rgba(209, 146, 63, 0.404);
     cursor: pointer;
     
   }
@@ -69,10 +68,14 @@ body{
 
   #date {
     width: 100px;
+    font-size: 12px;
+    background-color: inherit;
   }
 
   #priority{
     width: 100px;
+    font-size: 12px;
+    background-color: inherit;
   }
   lh{
     color: #333;
@@ -86,3 +89,5 @@ body{
   form{
     display: flexbox;
   }
+
+ 
