@@ -11,16 +11,29 @@ class TodoList extends Component {
         super(props);
 
         this.state = {
-            items: []
+            items: [],
+            
+            
         };
+       
+        
         this.addItem = this.addItem.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
+
+        
+   
+    
     }
+    
     addItem(e) {
         if (this._inputElement.value !== "") {
             var newItem = {
                 text: this._inputElement.value,
+                text1: this._inputElement1.value,
+                text2: this._inputElement2.value,
+                text3: this._inputElement3.value,
                 key: Date.now()
+               
             };
             this.setState((prevState) => {
                 return {
@@ -42,19 +55,26 @@ class TodoList extends Component {
         });
       }
     render() {
+        const newLocal = <button type="submit">ADD</button>;
         return (
             
             <div className="todoListMain">
-                <div className="title">My To-Do List{this.length}</div>
+                <div className="title">My To-Do List</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
-                        <input ref={(a) => this._inputElement =a}
+                        <input ref={(a) => this._inputElement=a}
                             placeholder="Add a Task">
-                                
                         </input>
-                        <button type="submit">ADD</button>
                         
+                        <input type="date" ref={(b) => this._inputElement1=b}></input>
+                        <select  ref={(c) => this._inputElement2=c}>
+                            <option value="Urgent">Urgent</option>
+                            <option value="Recurring">Recurring</option>
+                            <option value="Normal">Normal</option>
+                        </select>
+                        {newLocal}
                     </form>
+                    
                 
                     
                 </div>
