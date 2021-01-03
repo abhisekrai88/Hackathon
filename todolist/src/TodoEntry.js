@@ -7,6 +7,7 @@ class TodoEntry extends Component{
         super(props);
      
         this.newTask = this.newTask.bind(this);
+        
       }
      
       delete(key) {
@@ -17,22 +18,19 @@ class TodoEntry extends Component{
         //using key attr (set by date.now() in todoentry.js) to make it easier to keep tracks of each of the elements.
         
         return <li onClick={() => this.delete(item.key)}
-        key={item.key}>{item.text} {item.text1} {item.text2}</li>
+        key={item.key}>Task: {item.text}<br/> Date Due:{item.text1} <br/>Priority:{item.text2}</li>
     }
+   
       
     render (){
         
         var todoItems = this.props.entry;
         //using map to create an array by calling a function in order
         var itemsList = todoItems.map(this.newTask);
-        
-        
         //to display elements on screen
         return (
-            <ul className="list">
-                
+            <ul className="list" >
                 {itemsList}
-                
             </ul>
         );
     }

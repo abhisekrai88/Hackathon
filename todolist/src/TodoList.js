@@ -48,6 +48,9 @@ class TodoList extends Component {
         
         e.preventDefault();
     }
+
+    
+    
     deleteTask(key) {
         console.log("Deletetask: " + key)
         var updatedList = this.state.items.filter(function (item) {
@@ -58,15 +61,17 @@ class TodoList extends Component {
           items: updatedList
         });
       }
+      
+      
     render() {
         const newLocal = <button type="submit">ADD</button>;
         return (
             
             <div className="todoListMain">
-                <div className="title">My To-Do List</div>
+                <div className="title" >My To-Do List</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
-                        <input className="inputTask" ref={(a) => this._inputElement=a}
+                        <input className="inputTask" ref={(a) => this._inputElement=a} 
                             placeholder="Add a Task">
                         </input>
                         
@@ -78,7 +83,7 @@ class TodoList extends Component {
                         </select>
                         {newLocal}
                     </form>
-                    
+                   
                 
                     
                 </div>
