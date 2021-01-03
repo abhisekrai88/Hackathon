@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 class TodoEntry extends Component{
     constructor(props) {
         super(props);
@@ -18,10 +19,10 @@ class TodoEntry extends Component{
     }
       
     render (){
+        
         var todoItems = this.props.entry;
         //using map to create an array by calling a function in order
         var itemsList = todoItems.map(this.newTask);
-
         //to display elements on screen
         return (
             <ul className="list">

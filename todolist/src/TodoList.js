@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TodoEntry from "./TodoEntry";
 import "./todoapp.css";
+import Header from "./header"
 
 
 
@@ -41,7 +42,6 @@ class TodoList extends Component {
         });
       }
     render() {
-        
         return (
             
             <div className="todoListMain">
@@ -57,7 +57,8 @@ class TodoList extends Component {
                 
                     
                 </div>
-                <TodoEntry entry={this.state.items} delete={this.deleteTask}/>
+                <Header numTodos={this.state.items.length}/>
+                <TodoEntry entry={this.state.items} delete={this.deleteTask} />
             </div>
         );
     }
