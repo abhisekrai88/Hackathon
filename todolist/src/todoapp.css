@@ -40,16 +40,18 @@ body{
     border: 2px solid #003399;
     cursor: pointer;
   }
-  .todoListMain .list li {
+  .todoListMain  .list li {
     color: #333;
     background-color: rgba(255,255,255,.5);
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 15px;padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+
     border-radius: 5px;
-    transition: background-color 0.5s ease-out;
+    width: 320px;
     list-style: none;
-    display: block;
-    font-size: 18px;
+    display: inline-block;
+    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
     
