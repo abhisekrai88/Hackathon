@@ -31,9 +31,11 @@ class TodoEntry extends Component{
             </ul></li>
         
         </div>
-        )
-    }
         
+        )
+        
+    }
+    
       
     render (){
         

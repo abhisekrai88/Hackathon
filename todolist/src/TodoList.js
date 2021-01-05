@@ -20,6 +20,7 @@ class TodoList extends Component {
         
         this.addItem = this.addItem.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
+        
 
         
    
@@ -58,13 +59,15 @@ class TodoList extends Component {
         });
        
         this.setState({
-          items: updatedList
+          items: updatedList,
+         
         });
       }
       
       
     render() {
         const newLocal = <button type="submit">ADD</button>;
+        
         return (
             
             <div className="todoListMain">
@@ -72,7 +75,7 @@ class TodoList extends Component {
                 <div className="taskNum">You have {this.state.items.length} outstandind task(s)!</div>
                 <div className="header">
                     <form onSubmit={this.addItem}>
-                        <input className="inputTask" ref={(a) => this._inputElement=a} 
+                        <input className="inputTask" ref={(a) => this._inputElement=a} onChange={this.handleInput}
                             placeholder="Add a Task">
                         </input>
                         
@@ -84,13 +87,15 @@ class TodoList extends Component {
                             <option value="Normal">Normal</option>
                         </select>
                         {newLocal}
+                        
                     </form>
+                    
                    
                 
                     
                 </div>
                 
-                <TodoEntry entry={this.state.items} delete={this.deleteTask} />
+                <TodoEntry entry={this.state.items} delete={this.deleteTask} setUpdate={this.setUpdate} />
             </div>
         );
     }
